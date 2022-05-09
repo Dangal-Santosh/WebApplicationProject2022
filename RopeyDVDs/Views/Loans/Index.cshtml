@@ -1,0 +1,71 @@
+﻿@model IEnumerable<RopeyDVDs.Models.Loan>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center text-danger">All Loans</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary ms-lg-2">New Laon</a>
+</p>
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOut)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateDue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReturnedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LoanType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DVDCopy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Member)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-secondary">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOut)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateDue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReturnedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoanType.LoanDuration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DVDCopy.CopyNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Member.MemberFirstName)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.LoanNumber">Edit</a> 
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.LoanNumber">Details</a> 
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.LoanNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

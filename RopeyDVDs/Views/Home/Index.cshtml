@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center" style="color: red">
+    <h1 class="display-4 fw-bolder">Ropey DVD's Dashboard</h1>
+    <h2 class="masthead-subheading mb-0">The way we see it, the DVD rental service was simply the missing piece for out customers,...</h2>
+            <h2 class="masthead-subheading mb-0">We were already selling DVDs, DVD players and recorders.</h2>
+   <body>
+       
+       <table style="align-items: center; border-spacing: 100px; opacity: .75;">
+
+       <tr>
+
+        <td>
+       <div class="card" style="height: 30rem; width: 20rem; ">
+        <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/1909/1909897.png" alt="Card image cap">
+        <div class="card-body" style="background-color:transparent">
+        <p class="card-text" style="font-weight: bolder; color: black">Search a DVD by entering actor's last name</p>
+        <a class="btn btn-primary" asp-area="" asp-controller="DVDTitles" asp-action="DVDTitleSearch">Search DVD</a>
+        </div>
+       </div>
+       </td>
+
+       <td>
+       <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/1036/1036762.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">Search a DVD by entering actor's last name which is available on shelves</p>
+        <a class="btn btn-primary" asp-area="" asp-controller="DVDTitles" asp-action="DVDOnSelves">Search DVD on Shelves</a>
+        </div>
+       </div>
+       </td>
+
+       <td>
+       <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top " src="https://cdn-icons-png.flaticon.com/512/3029/3029373.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">View all the DVD copies that are loaned </p>
+        <a class="btn btn-primary" asp-area="" asp-controller="DVDTitles" asp-action="DVDCopiesOnLoan">DVD Copies On Loan</a>
+        </div>
+       </div>
+       </td>
+
+        <td>
+       <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQYehK62Xf9uMKYocjGuDgz8Y7qBpxqbM5SQ&usqp=CAU" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">DVDs details including- producer, studio, cast members with released date</p>
+        <a class="btn btn-primary" asp-area="" asp-controller="DVDTitles" asp-action="DVDDetails">DVD Details</a>
+        </div>
+       </div>
+       </td>
+
+     
+
+       </tr>
+
+       <tr>
+
+             <td>
+       <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://www.kindpng.com/picc/m/280-2801550_done-cccccc-order-details-icon-details-hd-png.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">Enter a member's name and view their past 31days loan information</p>
+        <a class="btn btn-primary" asp-area="" asp-controller="DVDTitles" asp-action="DVDSearchByMemberName">Member's Loan Details</a>
+        </div>
+       </div>
+       </td>
+
+        <td>
+        <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2058/2058198.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">Create a new loan record by providing member and available DVD information</p>
+        <a href="/Loans/Create" class="btn btn-primary">Add new loan</a>
+        </div>
+       </div>
+       </td>
+
+          <td>
+        <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/512/2683/2683274.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">Manage loan related tasks like viewing, editing loan status</p>
+        <a href="/Loans" class="btn btn-primary">Manage Loans</a>
+        </div>
+       </div>
+       </td>
+
+          <td>
+        <div class="card" style="height: 30rem; width: 20rem;">
+        <img class="card-img-top" src="https://w7.pngwing.com/pngs/809/597/png-transparent-computer-icons-customer-icon-design-users-group-customer-group-customers-forum-people-users-icon-group-of-people-miscellaneous-monochrome-black-thumbnail.png" alt="Card image cap">
+        <div class="card-body">
+        <p class="card-text" style="font-weight: bolder; color: black">View all the members with their information.</p>
+        <a class="btn btn-primary" asp-area="" asp-controller="Members" asp-action="Index">Member's Details</a>
+        </div>
+       </div>
+       </td>
+
+       </tr>
+
+       </table>
+
+   </body>
+</div>
+

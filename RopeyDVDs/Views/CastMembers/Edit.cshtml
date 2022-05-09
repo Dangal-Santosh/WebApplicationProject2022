@@ -1,0 +1,39 @@
+﻿@model RopeyDVDs.Models.CastMember
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-danger text-center fw-bold">Edit CastMember</h1>
+<hr />
+<div class="w-50 m-auto bg-secondary mb-5" style="padding: 20px 15px; border-radius: 5px">      
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group mx-1">
+                <label asp-for="ActorNumber" class="control-label fw-bold text-white"></label>
+                <select asp-for="ActorNumber" class="form-control bg-light" asp-items="ViewBag.ActorNumber"></select>
+                <span asp-validation-for="ActorNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group  mb-3 my-1">
+                <label asp-for="DVDNumber" class="control-label fw-bold text-white"></label>
+                <select asp-for="DVDNumber" class="form-control bg-light" asp-items="ViewBag.DVDNumber"></select>
+                <span asp-validation-for="DVDNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group my-1">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class=" btn btn-info ms-lg-1">Back to List</a>
+                <a class="btn btn-info" asp-action="Index">Back to List</a>
+
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+

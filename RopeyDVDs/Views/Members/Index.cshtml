@@ -1,0 +1,60 @@
+﻿@model IEnumerable<RopeyDVDs.Models.Member>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center text-danger">All Members</h1>
+
+<p>
+     <a asp-action="Create" class="btn btn-primary ms-lg-2">New Member</a>
+
+</p>
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberDateOfBirth)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MembershipCategory)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="table-secondary">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberDateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MembershipCategory.MembershipCategoryDescription)
+            </td>
+            <td>
+                <a asp-action="Edit"  class="btn btn-secondary" asp-route-id="@item.MemberNumber">Edit</a> 
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.MemberNumber">Details</a> 
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.MemberNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

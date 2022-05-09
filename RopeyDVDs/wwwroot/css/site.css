@@ -1,0 +1,23 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    opacity: .75;
+    background-color:darkgrey;
+    /*background-image: url("https://c.tenor.com/3UPlJCM04okAAAAC/mexican-movie-animation.gif");*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}

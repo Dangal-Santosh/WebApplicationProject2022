@@ -1,0 +1,30 @@
+﻿@model RopeysDVD.Models.Studio
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h2 class="text-danger text-center fw-bold"> Edit Studio</h2>
+
+<hr />
+<div class="w-50 m-auto bg-secondary" style="padding: 20px 15px; border-radius: 5px ;">
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mx-1">
+                <label asp-for="StudioName" class="control-label fw-bold text-white"></label>
+                <input asp-for="StudioName" class="form-control bg-light" />
+                <span asp-validation-for="StudioName" class="text-danger"></span>
+            </div>
+            <div class="form-group my-1">
+                <input type="submit" value="Save" class="btn btn-primary" />
+                <a asp-action="Index" class=" btn btn-info ms-lg-1">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

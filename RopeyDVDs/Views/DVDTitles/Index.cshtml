@@ -1,0 +1,77 @@
+﻿@model IEnumerable<RopeyDVDs.Models.DVDTitle>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center text-danger">Index</h1>
+
+<p>
+    <a asp-action="Create" lass="btn btn-primary ms-lg-2"> New DVDTitle</a>
+</p>
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TitleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateReleased)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandardCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateAdded)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PenaltyCharge)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DVDCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Studio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Producer)
+            </th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="px-3 table-secondary">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TitleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateReleased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandardCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateAdded)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PenaltyCharge)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DVDCategory.AgeRestricted)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Studio.StudioName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer.ProducerName)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-secondary" asp-route-id="@item.DVDNumber">Edit</a> 
+                <a asp-action="Details" class="btn btn-info"  asp-route-id="@item.DVDNumber">Details</a> 
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.DVDNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

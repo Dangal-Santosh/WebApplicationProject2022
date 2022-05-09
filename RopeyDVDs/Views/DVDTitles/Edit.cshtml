@@ -1,0 +1,72 @@
+﻿@model RopeyDVDs.Models.DVDTitle
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2 class="text-danger text-center fw-bold">Edit DVDTitle</h2>
+
+<h4>DVDTitle</h4>
+<hr />
+<div class="w-50 m-auto bg-secondary" style="padding: 20px 15px; border-radius: 5px ;">
+    <div class="row">
+        <div class="col-md-12">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="DVDNumber" />
+                <div class="form-group mx-1">
+                    <label asp-for="CategoryNumber" class="control-label fw-bold text-white"></label>
+                    <select asp-for="CategoryNumber" class="form-control bg-light" asp-items="ViewBag.CategoryNumber"></select>
+                    <span asp-validation-for="CategoryNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="StudioNumber" class="control-label fw-bold text-white"></label>
+                    <select asp-for="StudioNumber" class="form-control bg-light" asp-items="ViewBag.StudioNumber"></select>
+                    <span asp-validation-for="StudioNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="ProducerNumber"  class="control-label fw-bold text-white"></label>
+                    <select asp-for="ProducerNumber" class="form-control bg-light" asp-items="ViewBag.ProducerNumber"></select>
+                    <span asp-validation-for="ProducerNumber" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="TitleName"  class="control-label fw-bold text-white"></label>
+                    <input asp-for="TitleName" class="form-control bg-light" />
+                    <span asp-validation-for="TitleName" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="DateReleased" class="control-label fw-bold text-white"></label>
+                    <input asp-for="DateReleased" class="form-control bg-light" />
+                    <span asp-validation-for="DateReleased" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="StandardCharge" class="control-label fw-bold text-white"></label>
+                    <input asp-for="StandardCharge" class="form-control bg-light"/>
+                    <span asp-validation-for="StandardCharge" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="DateAdded" class="control-label fw-bold text-white"></label>
+                    <input asp-for="DateAdded" class="form-control bg-light" />
+                    <span asp-validation-for="DateAdded" class="text-danger"></span>
+                </div>
+                <div class="form-group mb-3 my-1">
+                    <label asp-for="PenaltyCharge" class="control-label fw-bold text-white"></label>
+                    <input asp-for="PenaltyCharge" class="form-control bg-light" />
+                    <span asp-validation-for="PenaltyCharge" class="text-danger"></span>
+                </div>
+                <div class="form-group my-1">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                    <a asp-action="Index" class=" btn btn-info ms-lg-1">Back to List</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+
+    @*<div>
+            <a asp-action="Index">Back to List</a>
+        </div>
+
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }*@

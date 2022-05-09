@@ -1,0 +1,39 @@
+﻿@using RopeyDVDs.Models.DTO
+@using System.Collections
+@model IEnumerable<RopeyDVDs.Models.CastMember>
+
+@{
+    ViewBag.Title = "DVD on Shelves";
+    var results = (IEnumerable<DVDOnSelevesDTO>)ViewData["results"];
+}
+<h1 class="text-center text-danger">DVD On Shelves</h1>
+
+@using (Html.BeginForm())
+{
+    <p>
+        <input type="search" name="searchString">
+        <button  class="btn btn-info" type="submit">Submit</button>
+    </p>
+}
+
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+    <tr>
+        <th>Actor</th>
+        <th>DVD Number</th>
+        <th>DVD Count</th>
+        <th>DVD Title</th>
+    </tr>
+    </thead>
+    <tbody class="px-3 table-secondary">
+    @foreach (var item in results)
+    {
+        <tr>
+            <td>@item.ActorSurname</td>
+            <td>@item.DVDNumber</td>
+            <td>@item.DVDCount</td>
+            <td>@item.Title</td>
+        </tr>
+    }
+    </tbody>
+</table>

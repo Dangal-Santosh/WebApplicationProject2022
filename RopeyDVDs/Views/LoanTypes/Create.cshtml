@@ -1,0 +1,35 @@
+﻿@model RopeysDVD.Models.LoanType
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h2 class="text-danger text-center fw-bold"> New LoanType</h2>
+
+<hr />
+<div class="w-50 m-auto bg-secondary" style="padding: 20px 15px; border-radius: 5px ;">
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mx-1">
+                <label asp-for="LoanTypeName" class="control-label fw-bold text-white"></label>
+                <input asp-for="LoanTypeName" class="form-control bg-light" />
+                <span asp-validation-for="LoanTypeName" class="text-danger"></span>
+            </div>
+            <div class="form-group mx-1">
+                <label asp-for="LoanDuration" class="control-label fw-bold text-white"></label>
+                <input asp-for="LoanDuration" class="form-control bg-light" />
+                <span asp-validation-for="LoanDuration" class="text-danger"></span>
+            </div>
+            <div class="form-group my-1">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index" class=" btn btn-info ms-lg-1">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

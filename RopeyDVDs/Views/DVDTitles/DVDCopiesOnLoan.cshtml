@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model System.Collections.Generic.List<RopeyDVDs.Models.DTO.DVDCopiesOnLoanDTO>
+
+@{
+    ViewBag.Title = "DVD Copies on Loan";
+    Layout = "_Layout";
+}
+<h1 class="text-center text-danger">Total Number of DVDs Copies on Loans</h1>
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+    <tr>
+        <th>Member Name</th>
+        <th>DVD Title</th>
+        <th>Copy Number</th>
+        <th>Date Out</th>
+    </tr>
+    </thead>
+    <tbody class="px-3 table-secondary">
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Title</td>
+            <td>@item.CopyNumber</td>
+            <td>@item.DateOut</td>
+        </tr>
+    }
+    </tbody>
+</table>

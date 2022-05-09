@@ -1,0 +1,63 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@{
+    ViewData["Title"] = "Index";
+    var member = (Member)ViewData["results"];
+    var loans = (IEnumerable<Loan>)ViewData["loans"];
+}
+<h1 class="text-center text-danger">DVD Search by MemberName</h1>
+@using (Html.BeginForm())
+{
+    <p>
+        Find by name: @Html.TextBox("dvdSearch")
+        <input  class="btn btn-info" type="submit" value="Search" />
+    </p>
+}
+
+<table class="table table-hover table-striped  text-center">
+    <thead class="table-dark">
+    <tr>
+        <th>
+            Member Name
+        </th>
+        <th>
+            DVD Title 
+        </th>
+        <th>
+            DVD Returned?
+        </th>
+        <th>
+            Copy Number
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody class="px-3 table-secondary">
+    @foreach (var item in loans)
+    {
+        <tr>
+            <th>
+                @Html.DisplayFor(modelItem=> item.Member.MemberFirstName)@Html.DisplayFor(modelItem=> item.Member.MemberLastName) 
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem=> item.DVDCopy.DVDTitle.TitleName) 
+            </th>
+            <th>
+                @if (item.ReturnedDate == null)
+                {
+                    @Html.Encode("No")
+                }
+                else {
+                    @Html.Encode("Yes")
+                }
+            </th>
+            <th>
+                @Html.DisplayFor(modelItem=> item.DVDCopy.CopyNumber)
+            </th>
+        </tr>
+    }
+    </tbody>
+</table>
